@@ -15,7 +15,6 @@
 	font-weight: 600px;
 }
 html {
-	display: table;
 }
 body {
 	display: flex;
@@ -25,8 +24,9 @@ body {
 	font-family: 'Inter Tight', sans-serif;
 }
 img {
-	  width: 100%;
-  	height: auto;
+	width: 50%;
+
+  height: auto;
 }
 a {
 	text-decoration: none;
@@ -106,18 +106,20 @@ main {
 	flex-direction: row;
 	justify-content: space-between;
 	margin-bottom: 85px;
+	position: relative;
 }
 .banner .left-side .underline {
 	text-decoration: underline;
 	text-decoration-color: var(--main-color);
 }
 .banner .left-side {
-	width: 55%;
+	width: 45%;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	z-index: 999;
 }
+
 .banner .left-side h1 {
 	font-size: 4em;
 	margin-bottom: 0px;
@@ -134,11 +136,8 @@ main {
 	align-items: flex-start;
 	box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.10);
 	padding: 20px;
-	height: 10vh;
 	border-radius: 10px;
 	position: relative;
-	height: auto;
-	flex-wrap: wrap;
 }
 .banner .left-side form input {
 	background-color: var(--thin-color);
@@ -167,6 +166,7 @@ main {
 	border: none;
 	padding: 20px;
 }
+
 .banner .left-side form button:hover {
 	background-color: var(--hover-color)
 }
@@ -179,7 +179,8 @@ main {
 	position: absolute;
 }
 .banner .right-side .left-image img {
-	width: 10rem;
+	width: 10em;
+	max-width: 100%;
 }
 .banner .right-side {
 	display: flex;
@@ -195,6 +196,7 @@ main {
 }
 .banner .right-side .right-image img {
 	width: 14em;
+	max-width: 100%;
 }
 .dropdown {
 	position: relative;
@@ -239,7 +241,8 @@ input {
 .section-plan-trip .left-side .thumbnail img {
 	box-shadow: 20px -20px 0px 0px var(--shadow-color);
 	border-radius: 25px;
-	width: 20em;
+	width: 24em;
+	max-width: 100%
 }
 .section-plan-trip .left-side .tour-guide-button {
 	position: relative;
@@ -270,7 +273,7 @@ input {
 	width: 40px;
 }
 .section-plan-trip .right-side .top p {
-	font-size: 18px;
+	font-size: 1.2em;
 	font-weight: 600;
 	color: var(--main-color);
 	margin-bottom: 5px;
@@ -283,7 +286,8 @@ input {
 	padding: 15px;
 	box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.10);
 	border-radius: 20px;
-	width: 2em;
+	width: 4em;
+	max-width: 100%;
 }
 .section-plan-trip .right-side .bottom .plan-list-item .item .icon-item {
 	display: flex;
@@ -552,6 +556,7 @@ input {
 }
 .section-choose-dream .right-side .image img {
 	width: 22em;
+	max-width: 100%;
 	border-radius: 20px;
 	box-shadow: -20px -20px 0px 0px var(--shadow-color);
 }
@@ -565,6 +570,7 @@ input {
 }
 .section-client-testimonial .container-section .left-side img {
 	width: 20em;
+	max-width: 100%;
 	border-radius: 20px;
 	box-shadow: 20px 20px 0px 0px var(--shadow-color);
 }
@@ -746,15 +752,26 @@ footer .copyright {
 		flex-flow: column nowrap;
 	}
 	h1 {
-		font-size: clamp(16px, 2em, 30px)
 	}
 	.banner .left-side {
 		gap: 20px;
 	}
 }
 @media only screen and (max-width: 768px) {
+	img {
+		width: 50%;
+	}
+	.banner .right-side {
+		filter: blur(2px);
+	}
+	.banner form {
+		font-size: 4vw;
+	}
+	body {
+		flex-wrap: wrap;
+		width: 100%;
+	}
 	nav {
-		width: auto;
 		margin: 0;
 	}
 	nav .ul1 {
@@ -763,5 +780,72 @@ footer .copyright {
 	nav .ul1 > li:not(.dropdown) {
 		display: none;
 	}
-
+	.banner {
+		position: relative;
+	}
+	.banner .right-side {
+		position: absolute;
+	}
+	.section-plan-trip {
+		flex-flow: row-reverse;
+		position: relative;
+	}
+	.section-plan-trip .left-side {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		position: absolute;
+		justify-content: space-between;
+		z-index: -1
+	}
+	.section-plan-trip .left-side .tour-guide-button button {
+		top: 0;
+		left: 0;
+		width: auto;
+		gap: 10px;
+	}
+	.section-choose-dream {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.section-choose-dream .left-side {
+		width: 100%;
+	}
+	.record-number > div {
+		width: 100%;
+	}
+	.experience-btn {
+		left: 0;
+	}
+	.client-test-card {
+		position: static;
+		width: 100%;
+	}
+	.section-client-testimonial .container-section {
+		display: block;
+	}
+	.section-client-testimonial .container-section .right-side {
+		align-items: center;
+	}
+	.btn-primary {
+		flex-grow: 1;
+	}
+	.subscribe-page #subscribe-form {
+		flex-wrap: wrap;
+		max-width: 100%;
+	}
+	.subscribe-page .subscribe-container {
+		width: 100%;
+	}
+	footer {
+		font-size: 2vw;
+		max-width: 100%
+	}
+	footer .container-footer {
+		padding-inline: 2em;
+		gap: 10px;
+	}
+	.dictation .arrow {
+		justify-content: center;
+	}
 }
