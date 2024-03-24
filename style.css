@@ -25,8 +25,7 @@ body {
 }
 img {
 	width: 50%;
-
-  height: auto;
+  	height: auto;
 }
 a {
 	text-decoration: none;
@@ -234,9 +233,10 @@ input {
 .section-plan-trip {
 	display: flex;
 	margin-bottom: 16vh;
+	gap: 40px;
+	justify-content: space-between;
 }
 .section-plan-trip .left-side {
-	width: 50%;
 }
 .section-plan-trip .left-side .thumbnail img {
 	box-shadow: 20px -20px 0px 0px var(--shadow-color);
@@ -255,12 +255,12 @@ input {
 	border: none;
 	padding-block: 3px;
 	border-radius: 15px;
-	width: 15em;
+	width: -webkit-fill-available;
 	background-color: rgba(0, 0, 0, 0.2);
 	position: absolute;
 	color: white;
-	top: -40px;
-	left: 14em;
+	top: -2em;
+	left: 50%;
 	backdrop-filter: blur(2px);
 	transition: all 0.3s ease-in-out
 }
@@ -288,6 +288,7 @@ input {
 	border-radius: 20px;
 	width: 4em;
 	max-width: 100%;
+	background-color: white
 }
 .section-plan-trip .right-side .bottom .plan-list-item .item .icon-item {
 	display: flex;
@@ -316,6 +317,7 @@ input {
 .dictation .arrow {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	color: white;
 	padding: 10px;
 	background: var(--main-color);
@@ -325,6 +327,9 @@ input {
 	box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.10);
 	cursor: pointer;
 }
+/*.dictation .arrow i {
+	max-width: 100%;
+}*/
 .container {
 	display: flex;
 	flex-direction: row;
@@ -362,13 +367,15 @@ input {
 	gap: 50px;
 	padding: 20px;
 	overflow: hidden;
+	flex-wrap: wrap;
 }
 .card-container .card {
 	box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.10);
 	width: fit-content;
 	border-radius: 15px 15px 10px 10px;
 	padding-block: 0;
-	transition: transform 0.3s
+	transition: transform 0.3s;
+	flex: 0 1 25%;
 }
 .card-container .card:hover {
 	transform: scale(1.1);
@@ -746,18 +753,40 @@ footer .copyright {
 	justify-content: center;
 	color: white;
 }
-@media only screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px)  {
 	main {
 		padding-inline: 2em;
-		flex-flow: column nowrap;
-	}
-	h1 {
 	}
 	.banner .left-side {
 		gap: 20px;
 	}
-}
-@media only screen and (max-width: 768px) {
+	.section-client-testimonial .container-section {
+		flex-wrap: wrap;
+	}
+	.client-test-card {
+		position: static;
+	}
+	.experience-btn {
+		position: static;
+		width: fit-content;
+	}
+	.section-choose-dream .right-side .image{
+		position: relative;
+		z-index: -1;
+	}
+	footer {
+		font-size: 2vw;
+		max-width: 100%
+	}
+	footer .container-footer {
+		padding-inline: 2em;
+		gap: 10px;
+	}
+
+@media only screen and (max-width: 600px) {
+	main {
+		padding-inline: 2em;
+	}
 	img {
 		width: 50%;
 	}
@@ -790,13 +819,15 @@ footer .copyright {
 		flex-flow: row-reverse;
 		position: relative;
 	}
+	.section-plan-trip .right-side {
+		z-index: 999;
+	}
 	.section-plan-trip .left-side {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 		position: absolute;
 		justify-content: space-between;
-		z-index: -1
 	}
 	.section-plan-trip .left-side .tour-guide-button button {
 		top: 0;
@@ -847,5 +878,23 @@ footer .copyright {
 	}
 	.dictation .arrow {
 		justify-content: center;
+	}
+	.banner .right-side .left-image img {
+		opacity: 70%;
+	}
+	.section-plan-trip .left-side {
+		width: 100%;
+	}
+	.section-plan-trip .left-side .thumbnail img {
+		filter: blur(5px);
+		z-index: -1;
+	}
+	.subscribe-page .subscribe-container p {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 370px) {
+	main {
+		padding-inline: 1em; 
 	}
 }
