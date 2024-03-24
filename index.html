@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +17,14 @@
 			<li><a href="#">About</a></li>
 			<li><a href="#">Packages</a></li>
 			<li><a href="#">Contact</a></li>
-			<li><form class="header-search">
-					<label for="header-search-input"><i class="fa-solid fa-magnifying-glass"></i></label>
-					<ul>
-						<li><input type="text" name="header-search-input" id='header-search-input'/><button>Search</button></li>
-					</ul>
-				</form>
+			<li class="dropdown"><i class="fa-solid fa-magnifying-glass"></i>
+				<ul class="dropdown-content">
+					<li>
+					<form class="header-search">
+						<label for="header-search-input"></label>
+						<input type="text" name="header-search-input" id='header-search-input' placeholder="Search here..." /><button class="btn-primary">Search</button>
+					</form></li>
+				</ul>
 			</li>
 		</ul>
 		<span><i class="fa-solid fa-bars"></i></span>
@@ -30,28 +32,28 @@
 	<main> 
 		<div class="banner">
 			<div class="left-side">
-				<h1><span class="underline">Let’s</span> Create<br>Memorable <br>Journey</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br>s eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<form>
-					<div class="location">
-						<label for='location-input'>Location<i class="fa-solid fa-angle-down"></i></label>
-						<p class="current-location">Jakarta</p>
-						<input type="text" name="location-input" id='location-input'>
-					</div>
-					<div class="date">
-						<label for="date-input">Date<i class="fa-solid fa-angle-down"></i></label>
-						<p class="current-date">18 Mar, Fri</p>
-						<input type="date" name="date-input" id='date-input'>
-					</div>
-					<div class="price">
-						<label for="price-input">Price<i class="fa-solid fa-angle-down"></i></label>
-						<p class="current-price">$899,00USD</p>
-						<input type="number" name="price-input" id='price-input'>
-					</div>
-					<div class="search">
-						<button><i class="fa-solid fa-magnifying-glass"></i></button>
-					</div> 
-				</form>
+					<h1><span class="underline">Let’s</span> Create Memorable Journey</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dos eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<form>
+						<div class="location">
+							<label for='location-input'>Location<i class="fa-solid fa-angle-down"></i></label>
+							<p class="current-location">Jakarta</p>
+							<input type="text" class="style-bg" name="location-input" id='location-input'>
+						</div>
+						<div class="date">
+							<label for="date-input">Date<i class="fa-solid fa-angle-down"></i></label>
+							<p class="current-date">18 Mar, Fri</p>
+								<input type="date" class="style-bg" name="date-input" id='date-input'>
+						</div>
+						<div class="price">
+							<label for="price-input">Price<i class="fa-solid fa-angle-down"></i></label>
+							<p class="current-price">$899,00USD</p>
+							<input type="number" class="style-bg" name="price-input" id='price-input'>
+						</div>
+						<div class="search">
+							<button><i class="fa-solid fa-magnifying-glass"></i></button>
+						</div> 
+					</form>
 			</div>
 			<div class="right-side">
 				<div class="left-image">
