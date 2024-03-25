@@ -883,6 +883,14 @@ footer .copyright {
 	nav .ul1 > li:not(.dropdown) {
 		display: none;
 	}
+	nav .ul1 > li.dropdown .dropdown-content {
+		transform: translateX(-70%);
+		z-index: 999999;
+	}
+	nav .ul1 > li.dropdown .dropdown-content .header-search {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.banner {
 		position: relative;
 	}
