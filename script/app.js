@@ -15,4 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
 		body.style.position = 'static'	
 		containerSideBar.style.display = 'none';		
 	})
+
+	const dropdownBtn = document.querySelector('.dropdown');
+	const dropdownContent = document.querySelector('.dropdown-content');
+	const searchInput = document.querySelector('#header-search-input')
+	dropdownBtn.addEventListener('click', (e) => {
+		dropdownBtn.classList.toggle('open')
+		if (dropdownBtn.classList.contains('open')) {
+			dropdownContent.style.display = 'block';
+			searchInput.focus()
+			searchInput.addEventListener('blur', () => {
+				dropdownContent.style.display = 'none'
+			})
+		}
+		else {
+			dropdownContent.style.display = 'none';
+		}
+	})
+	dropdownContent.addEventListener('click', function(e) {
+		e.stopPropagation()
+
+	})
 }) 
