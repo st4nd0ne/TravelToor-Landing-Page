@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			searchInput.focus()
 			searchInput.addEventListener('blur', () => {
 				dropdownContent.style.display = 'none'
+				dropdownBtn.classList.remove('open')
 			})
 		}
 		else {
